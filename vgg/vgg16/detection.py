@@ -1,5 +1,5 @@
 import tensorflow as tf
 
-class VGG16:
+class Detector:
 
 	def __init__(self):
