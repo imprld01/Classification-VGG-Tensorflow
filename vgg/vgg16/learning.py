@@ -6,3 +6,9 @@ import tensorflow as tf
 class Learner:
 
 	def __init__(self):
+		
+	
+	def learn(self):
+		
+	
+	
