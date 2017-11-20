@@ -73,9 +73,10 @@ class VGG16:
     def addFcLayer(self, net, weights, biases, name):
 		
 		dim = 1
-		
 		shape = net.get_shape().as_list()
+		
 		for d in shape[1:]: dim *= d
+		
 		x = tf.reshape(net, [-1, dim])
 		
 		return tf.nn.bias_add(tf.matmul(x, weights), biases)
