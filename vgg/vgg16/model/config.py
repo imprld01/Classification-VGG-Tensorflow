@@ -1,1 +1,99 @@
-# net
+#
+# path and dataset parameter
+#
+
+
+
+#
+# model parameter
+#
+
+# part1
+CONVFILTER_1_1 = 
+CONVSTRIDE_1_1 = [1, 1, 1, 1]
+CONVBIASES_1_1 = 
+CONVFILTER_1_2 = 
+CONVSTRIDE_1_2 = [1, 1, 1, 1]
+CONVBIASES_1_2 = 
+POOLFILTER_1 = [1, 2, 2, 1]
+POOLSTRIDE_1 = [1, 2, 2, 1]
+# part2
+CONVFILTER_2_1 = 
+CONVSTRIDE_2_1 = [1, 1, 1, 1]
+CONVBIASES_2_1 = 
+CONVFILTER_2_2 = 
+CONVSTRIDE_2_2 = [1, 1, 1, 1]
+CONVBIASES_2_2 = 
+POOLFILTER_2 = [1, 2, 2, 1]
+POOLSTRIDE_2 = [1, 2, 2, 1]
+# part3
+CONVFILTER_3_1 = 
+CONVSTRIDE_3_1 = [1, 1, 1, 1]
+CONVBIASES_3_1 = 
+CONVFILTER_3_2 = 
+CONVSTRIDE_3_2 = [1, 1, 1, 1]
+CONVBIASES_3_2 = 
+CONVFILTER_3_3 = 
+CONVSTRIDE_3_3 = [1, 1, 1, 1]
+CONVBIASES_3_3 = 
+CONVFILTER_3_4 = 
+CONVSTRIDE_3_4 = [1, 1, 1, 1]
+CONVBIASES_3_4 = 
+POOLFILTER_3 = [1, 2, 2, 1]
+POOLSTRIDE_3 = [1, 2, 2, 1]
+# part 4
+CONVFILTER_4_1 = 
+CONVSTRIDE_4_1 = [1, 1, 1, 1]
+CONVBIASES_4_1 = 
+CONVFILTER_4_2 = 
+CONVSTRIDE_4_2 = [1, 1, 1, 1]
+CONVBIASES_4_2 = 
+CONVFILTER_4_3 = 
+CONVSTRIDE_4_3 = [1, 1, 1, 1]
+CONVBIASES_4_3 = 
+CONVFILTER_4_4 = 
+CONVSTRIDE_4_4 = [1, 1, 1, 1]
+CONVBIASES_4_4 = 
+POOLFILTER_4 = [1, 2, 2, 1]
+POOLSTRIDE_4 = [1, 2, 2, 1]
+# part5
+CONVFILTER_5_1 = 
+CONVSTRIDE_5_1 = [1, 1, 1, 1]
+CONVBIASES_5_1 = 
+CONVFILTER_5_2 = 
+CONVSTRIDE_5_2 = [1, 1, 1, 1]
+CONVBIASES_5_2 = 
+CONVFILTER_5_3 = 
+CONVSTRIDE_5_3 = [1, 1, 1, 1]
+CONVBIASES_5_3 = 
+CONVFILTER_5_4 = 
+CONVSTRIDE_5_4 = [1, 1, 1, 1]
+CONVBIASES_5_4 = 
+POOLFILTER_5 = [1, 2, 2, 1]
+POOLSTRIDE_5 = [1, 2, 2, 1]
+# part6
+FCWEIGHTS_6 = 
+FCBIASES_6 = 
+# part7
+FCWEIGHTS_7 = 
+FCBIASES_7 = 
+# part8
+FCWEIGHTS_8 = 
+FCBIASES_8 = 
+
+#
+# learner parameter
+#
+
+
+
+#
+# detector parameter
+#
+
+
+
+#
+# test parameter
+#
+
