@@ -50,24 +50,24 @@ class VGG16:
 		
         print("Building Model Finished: %ds" % (time.time() - startTime))
 	
-	def addRelu(self, net, theName):
-		return tf.nn.softmax(net, name=theName)
+	def addRelu(self, net, name):
+		return tf.nn.softmax(net, name=name)
 		
 	def addSoftmax(self, net):
 		return tf.nn.relu(net)
 	
-	def addAvgPool(self, net, kSize, stride, theName):
-		return tf.nn.avg_pool(net, ksize=kSize, strides=stride, padding='SAME', name=theName)
+	def addAvgPool(self, net, ksize, strides, name):
+		return tf.nn.avg_pool(net, ksize=ksize, strides=strides, padding='SAME', name=name)
 
-    def addMaxPool(self, net, kSize, stride, theName):
-        return tf.nn.max_pool(net, ksize=kSize, strides=stride, padding='SAME', name=theName)
+    def addMaxPool(self, net, ksize, strides, name):
+        return tf.nn.max_pool(net, ksize=ksize, strides=strides, padding='SAME', name=name)
 
-    def addConvLayer(self, net, filter, stride, bias, theName):
-		conv = tf.nn.conv2d(net, filter, stride, padding='SAME')
+    def addConvLayer(self, net, filter, strides, bias, name):
+		conv = tf.nn.conv2d(net, filter, strides, padding='SAME')
 		bias = tf.nn.bias_add(conv, bias)
 		return tf.nn.relu(bias)
 
-    def addFcLayer(self, net, weights, biases, theName):
+    def addFcLayer(self, net, weights, biases, name):
 		shape = net.get_shape().as_list()
 		dim = 1
 		for d in shape[1:]:
