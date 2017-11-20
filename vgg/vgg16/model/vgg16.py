@@ -39,30 +39,35 @@ class VGG16:
         pool5 = self.addMaxPool(conv5_4, [1, 2, 2, 1], [1, 2, 2, 1], 'pool5')
 
         fc6 = self.addFcLayer(pool5, weights, biases, "fc6")
-        assert fc6.get_shape().as_list()[1:] == [4096]
-        relu6 = tf.nn.relu(fc6)
+        relu6 = self.addRelu(fc6)
 
         fc7 = self.addFcLayer(relu6, weights, biases, "fc7")
-        relu7 = tf.nn.relu(fc7)
+        relu7 = self.addRelu(fc7)
 
         fc8 = self.addFcLayer(relu7, weights, biases, "fc8")
 
-        prob = tf.nn.softmax(fc8, name="prob")
+        prob = self.addSoftmax(fc8)
 		
         print("Building Model Finished: %ds" % (time.time() - startTime))
 	
-	def addAvgPool(self, net, kSize, stride, name):
-		return tf.nn.avg_pool(net, ksize=kSize, strides=stride, padding='SAME', name=name)
+	def addRelu(self, net, theName):
+		return tf.nn.softmax(net, name=theName)
+		
+	def addSoftmax(self, net):
+		return tf.nn.relu(net)
+	
+	def addAvgPool(self, net, kSize, stride, theName):
+		return tf.nn.avg_pool(net, ksize=kSize, strides=stride, padding='SAME', name=theName)
 
-    def addMaxPool(self, net, kSize, stride, name):
-        return tf.nn.max_pool(net, ksize=kSize, strides=stride, padding='SAME', name=name)
+    def addMaxPool(self, net, kSize, stride, theName):
+        return tf.nn.max_pool(net, ksize=kSize, strides=stride, padding='SAME', name=theName)
 
-    def addConvLayer(self, net, filter, stride, bias, name):
+    def addConvLayer(self, net, filter, stride, bias, theName):
 		conv = tf.nn.conv2d(net, filter, stride, padding='SAME')
 		bias = tf.nn.bias_add(conv, bias)
 		return tf.nn.relu(bias)
 
-    def addFcLayer(self, net, weights, biases, name):
+    def addFcLayer(self, net, weights, biases, theName):
 		shape = net.get_shape().as_list()
 		dim = 1
 		for d in shape[1:]:
