@@ -9,6 +9,7 @@ class VGG16:
 		
 	
 	def build(self, image):
+		
 		startTime = time.time()
         print("Start Building Model...")
 
@@ -63,17 +64,18 @@ class VGG16:
         return tf.nn.max_pool(net, ksize=ksize, strides=strides, padding='SAME', name=name)
 
     def addConvLayer(self, net, filter, strides, bias, name):
+		
 		conv = tf.nn.conv2d(net, filter, strides, padding='SAME')
 		bias = tf.nn.bias_add(conv, bias)
+		
 		return tf.nn.relu(bias)
 
     def addFcLayer(self, net, weights, biases, name):
-		shape = net.get_shape().as_list()
+		
 		dim = 1
-		for d in shape[1:]:
-			dim *= d
+		
+		shape = net.get_shape().as_list()
+		for d in shape[1:]: dim *= d
 		x = tf.reshape(net, [-1, dim])
-
-		# Fully connected layer. Note that the '+' operation automatically
-		# broadcasts the biases.
+		
 		return tf.nn.bias_add(tf.matmul(x, weights), biases)
